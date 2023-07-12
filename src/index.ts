@@ -2,9 +2,12 @@ import express, {Application} from "express";
 import routes from "./routes";
 import session, {SessionOptions} from 'express-session';
 import {initializeAuth} from "./routes/auth";
+import cors from "cors";
 
 const app: Application = express();
 const port: number = 3000;
+
+app.use(cors());
 
 const sessionOptions: SessionOptions = {
   resave: false,
